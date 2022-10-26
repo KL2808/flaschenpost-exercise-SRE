@@ -13,28 +13,23 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "sre" {
-  name     = "sre-challenge-flashenpost"
-  location = "West Europe"
-  tags = {
-    "department" = "SRE"
-  }
+  name     = var.azure_rg_name
+  location = var.azure_rg_location
+  tags     = var.azure_tags
 }
 
 resource "azurerm_storage_account" "sre" {
-  # name                     = "srechallengeforflaschenpost" # This name is too long (max length 24 chars) 
-  name                     = "srechallengeflaschenpost" 
+  name                     = var.azure_sacc_name 
   location                 = azurerm_resource_group.sre.location
   resource_group_name      = azurerm_resource_group.sre.name
-  account_tier             = "Standard"
-  account_replication_type = "LRS"  
-  access_tier              = "Hot"
-  tags = {
-    "department" = "SRE"
-  }
+  account_tier             = var.azure_sacc_tier
+  account_replication_type = var.azure_sacc_replication_type
+  access_tier              = var.azure_sacc_access_tier
+  tags                     = var.azure_tags
 }
 
 resource "azurerm_storage_container" "sre" {
-  name                  = "sre"
-  container_access_type = "private"
+  name                  = var.azure_sc_name
+  container_access_type = var.azure_sc_access_type
   storage_account_name  = azurerm_storage_account.sre.name
 }
