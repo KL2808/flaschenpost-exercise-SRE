@@ -1,4 +1,4 @@
-# Question 7(Level 3):
+# Question 4(Level 3):
 
 In this challenge, write an HTTP GET method to retrieve information from a films DB Given a string substr, the function getMovieTitles must perform the following tasks:
 

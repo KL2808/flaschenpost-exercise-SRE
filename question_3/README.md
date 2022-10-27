@@ -1,4 +1,4 @@
-# Question 6(Level 3):
+# Question 3(Level 3):
 
 In this challenge, write a program to analyze a log file and summarize the results. Given a text file of an http requests log, list the number of requests from each host. Output should be directed to a file as described in the Program Description below. The format of the log file, a text file with a .log extension, follows. Each line contains a single log record with the following columns (in order):
 
